@@ -63,15 +63,12 @@ npm run lint
 
 Node 20+ recommended. The original design handoff is in `design-reference/`; open the Workspace Builder `.dc.html` file with `support.js` next to it to view the prototype.
 
-## Product notes
-A few decisions I'd make before this went in front of real renters, and why:
+## Product notes and next steps
+A few decisions I'd make before this went in front of real renters, and what I'd build with more time:
 
 - **Gate the builder behind location and delivery date.** Stock varies by area and day in Bali, and monis already tells users to set their location first so they only see what's actually available. Building a setup that can't arrive tomorrow wastes the user's effort, so in production the builder should only offer in-stock items for the chosen place and date.
 - **Show cost commitment upfront.** A first-time renter's real question is what hits their card today and what they're locked into. I'd surface the 1-week minimum, any delivery fee or deposit, and a clear "nothing charged until it arrives," rather than a flat "free" that later fine print can contradict.
 - **Add fit hints, not just specs.** Answer "will this work for me": which monitors charge a MacBook over USB-C, whether a desk is wide enough for a chosen screen, whether dual monitors need a dock. That's the guidance the current product pages leave the user to work out alone.
-
-## If I had more time
-
 - **Sync catalog and pricing to the live API.** Names, specs, real weekly/monthly SKU prices (replacing the `round(weekly × 3.03)` placeholder), same-day eligibility, stock and bundle definitions should come from the live catalog API, and the cart should submit through the existing checkout.
 - **Swap the shape illustrations for commissioned SVG/WebP art.** Each item keeps its box size and anchor point, so the scene's layout and layering rules stay the same.
 - **AI-generated "room preview".** Let the renter upload a photo of their villa or co-living room and get a photo-real render of the chosen setup in their own space, next to the illustrated preview.
