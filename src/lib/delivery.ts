@@ -6,8 +6,12 @@ export const SLOTS: DeliverySlot[] = ["8–12", "12–16", "16–20"];
 /** monis.rent operates in Bali (WITA, UTC+8). */
 const TZ = "Asia/Makassar";
 
+const part = (d: Date, opts: Intl.DateTimeFormatOptions) =>
+  new Intl.DateTimeFormat("en-US", { timeZone: TZ, ...opts }).format(d);
+
+/** "29 Sep" / "Tue" / "Wednesday" — built from parts so every runtime agrees (en-GB says "Sept"). */
 const fmt = (d: Date, opts: Intl.DateTimeFormatOptions) =>
-  new Intl.DateTimeFormat("en-GB", { timeZone: TZ, ...opts }).format(d);
+  opts.month ? `${part(d, { day: "numeric" })} ${part(d, { month: "short" })}` : part(d, opts);
 
 const addDays = (d: Date, n: number) => new Date(d.getTime() + n * 86_400_000);
 
