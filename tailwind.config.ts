@@ -49,12 +49,6 @@ const config: Config = {
       transitionTimingFunction: {
         pop: "cubic-bezier(.34,1.56,.64,1)",
       },
-      keyframes: {
-        fall: {
-          "0%": { transform: "translateY(-40px) rotate(0)" },
-          "100%": { transform: "translateY(110vh) rotate(540deg)" },
-        },
-      },
     },
   },
 };

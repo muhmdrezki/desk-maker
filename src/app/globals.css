@@ -24,6 +24,16 @@
   }
 }
 
+/* Confirmation confetti */
+@keyframes fall {
+  0% {
+    transform: translateY(-40px) rotate(0);
+  }
+  100% {
+    transform: translateY(110vh) rotate(540deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
