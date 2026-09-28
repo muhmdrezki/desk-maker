@@ -1,5 +1,7 @@
 # Build Your Workspace
 
+![Build Your Workspace](./docs/hero.png)
+
 An interactive workspace configurator for a tech-gear rental service for remote workers in Bali. Pick a bundle, swap the desk, add a chair, up to two monitors and accessories, and watch an illustrated room put itself together as you go. Switch between weekly and monthly pricing, then rent the setup through a short checkout.
 
 **Live:** https://desk-maker.vercel.app
@@ -63,6 +65,7 @@ Node 20+ recommended. The original design handoff is in `design-reference/`; ope
 
 ## If I had more time
 
+- **Compatibility hints.** Flag which monitors charge a MacBook over USB-C (the 27" 4K and 32" LG do, the entry Full HD ones don't), and warn when a desk width is tight for a chosen monitor. It answers a real question renters have that the current product pages leave them to figure out.
 - **Sync catalog and pricing to the live API.** Names, specs, real weekly/monthly SKU prices (replacing the `round(weekly × 3.03)` placeholder), same-day eligibility, stock and bundle definitions should come from the live catalog API, and the cart should submit through the existing checkout.
 - **Swap the shape illustrations for commissioned SVG/WebP art.** Each item keeps its box size and anchor point, so the scene's layout and layering rules stay the same.
 - **AI-generated "room preview".** Let the renter upload a photo of their villa or co-living room and get a photo-real render of the chosen setup in their own space, next to the illustrated preview.
