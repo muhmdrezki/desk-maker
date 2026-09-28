@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#E7E5DF;font-family:'Plus Jakarta Sans',sans-serif;color:#121417}a{color:#0E6B53;text-decoration:none}a:hover{color:#0A5140}*{box-sizing:border-box}@keyframes fall{0%{transform:translateY(-40px) rotate(0)}100%{transform:translateY(900px) rotate(540deg)}}</style>
+</helmet>
+<section style="padding:80px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div style="font-size:36px;font-weight:800;letter-spacing:-.03em">monis.rent · Build Your Workspace</div>
+<div style="font-size:17px;color:#5F6368">Builder, checkout and mobile. All screens share one live setup, so changes carry across.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:64px;align-items:flex-start">
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F74">01 · Builder · Desktop</div>
+<div data-screen-label="Builder desktop" style="width:1440px;background:#F6F5F1;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(20,20,20,.12)">
+<div style="display:flex;align-items:center;gap:20px;padding:16px 40px;background:#FFFFFF;border-bottom:1px solid #ECEAE4">
+<div style="font-weight:800;font-size:24px;letter-spacing:-.04em">monis<span style="color:#0E6B53">.rent</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;background:#F4F3EF;font-size:14px"><span style="color:#6B6F74">Deliver to</span><span style="font-weight:700">Canggu, Bali</span></div>
+<div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;background:#F4F3EF;font-size:14px"><span style="color:#6B6F74">Delivery</span><span style="font-weight:700">Tomorrow, 29 Sep</span></div>
+<div style="flex:1"></div>
+<div style="display:flex;gap:28px;font-size:15px;font-weight:600;color:#3C4043"><div>All products</div><div>Bundles</div><div>How it works</div></div>
+<div style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#121417;color:#FFFFFF;font-size:14px;font-weight:700">Cart<span style="min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:#0E6B53;display:flex;align-items:center;justify-content:center;font-size:12px">{{ count }}</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px;padding:32px 40px 40px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:8px"><span style="padding:5px 10px;border-radius:999px;background:#121417;color:#FFFFFF;font-size:12px;font-weight:700">New</span><span style="font-size:14px;font-weight:600;color:#0E6B53">Workspace Builder</span></div>
+<div style="font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1">Build your workspace</div>
+<div style="font-size:17px;color:#5F6368">Start from a bundle, make it yours, and we'll set it all up at your place tomorrow.</div>
+</div>
+<div style="display:flex;gap:10px">
+<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#E3F1EA;color:#0A5140;font-size:14px;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:#16A34A"></span>Next-day delivery</div>
+<div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#FFFFFF;border:1px solid #ECEAE4;font-size:14px;font-weight:600">Setup &amp; pickup included</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px">
+<sc-for list="{{ bundles }}" as="b" hint-placeholder-count="4">
+<div onClick="{{ b.onClick }}" style="position:relative;display:flex;flex-direction:column;gap:6px;padding:16px 18px;border-radius:18px;background:#FFFFFF;border:2px solid {{ b.border }};cursor:pointer;transition:border-color .2s,transform .2s" style-hover="transform:translateY(-2px)">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><div style="font-size:16px;font-weight:800;letter-spacing:-.01em">{{ b.name }}</div><sc-if value="{{ b.hasTag }}" hint-placeholder-val="{{ true }}"><span style="padding:3px 8px;border-radius:999px;background:#FFEDE3;color:#B5400F;font-size:12px;font-weight:800">−20%</span></sc-if></div>
+<div style="font-size:13px;color:#5F6368;line-height:1.4">{{ b.desc }}</div>
+<div style="font-size:14px;font-weight:700;margin-top:2px">{{ b.priceLabel }}</div>
+</div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 480px;gap:24px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:14px;padding:12px;border-radius:24px;background:#FFFFFF;border:1px solid #ECEAE4">
+<div style="position:relative;border-radius:16px;overflow:hidden">
+<dc-import name="Tech Scene" desk="{{ desk }}" chair="{{ chair }}" monitors="{{ monitors }}" acc="{{ acc }}" hint-size="100%,560px"></dc-import>
+<div style="position:absolute;left:16px;top:16px;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.92);font-size:13px;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:#16A34A"></span>Live preview</div>
+<div style="position:absolute;right:16px;top:16px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.92);font-size:13px;font-weight:700">{{ count }} items</div>
+<sc-for list="{{ hotspots }}" as="h" hint-placeholder-count="0">
+<div onClick="{{ h.onClick }}" style="position:absolute;left:{{ h.x }}%;top:{{ h.y }}%;display:flex;align-items:center;gap:7px;padding:7px 14px 7px 7px;border-radius:999px;background:#FFFFFF;box-shadow:0 6px 20px rgba(20,20,20,.14);font-size:13px;font-weight:700;white-space:nowrap;cursor:pointer;transition:transform .2s cubic-bezier(.34,1.56,.64,1)" style-hover="transform:scale(1.06)"><span style="width:22px;height:22px;border-radius:50%;background:#0E6B53;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1">+</span>{{ h.label }}</div>
+</sc-for>
+<div style="position:absolute;left:50%;bottom:18px;padding:11px 18px;border-radius:999px;background:#121417;color:#FFFFFF;font-size:14px;font-weight:600;white-space:nowrap;opacity:{{ toastO }};transform:translateX(-50%) {{ toastT }};transition:opacity .25s ease,transform .4s cubic-bezier(.34,1.56,.64,1)">{{ toast }}</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:2px 6px 6px">
+<div style="font-size:13px;font-weight:700;color:#6B6F74;margin-right:4px">In your setup</div>
+<sc-for list="{{ setupChips }}" as="sc" hint-placeholder-count="4">
+<div style="display:flex;align-items:center;gap:8px;padding:6px 6px 6px 12px;border-radius:999px;background:#F4F3EF;font-size:13px;font-weight:600">{{ sc.label }}<span onClick="{{ sc.onRemove }}" style="width:20px;height:20px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;color:#6B6F74;cursor:pointer">×</span></div>
+</sc-for>
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:#6B6F74">Nothing yet. Pick a desk to start.</div></sc-if>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:24px;background:#FFFFFF;border:1px solid #ECEAE4">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:14px;background:#F4F3EF;width:250px">
+<sc-for list="{{ billingOpts }}" as="bo" hint-placeholder-count="2">
+<div onClick="{{ bo.onClick }}" style="height:38px;border-radius:10px;background:{{ bo.bg }};box-shadow:{{ bo.shadow }};display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s">{{ bo.label }}</div>
+</sc-for>
+</div>
+<div style="padding:7px 12px;border-radius:999px;background:#FFEDE3;color:#B5400F;font-size:13px;font-weight:800">Monthly saves ~30%</div>
+</div>
+<div style="display:flex;gap:6px;border-bottom:1px solid #ECEAE4">
+<sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="4">
+<div onClick="{{ tb.onClick }}" style="display:flex;align-items:center;gap:6px;padding:10px 10px 12px;border-bottom:2.5px solid {{ tb.line }};margin-bottom:-1px;font-size:15px;font-weight:700;color:{{ tb.color }};cursor:pointer">{{ tb.label }}<span style="min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:{{ tb.pillBg }};color:{{ tb.pillColor }};font-size:11px;display:flex;align-items:center;justify-content:center">{{ tb.n }}</span></div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+<sc-for list="{{ cards }}" as="c" hint-placeholder-count="4">
+<div onClick="{{ c.onPick }}" style="display:flex;flex-direction:column;gap:10px;padding:8px 8px 12px;border-radius:18px;border:2px solid {{ c.border }};background:{{ c.bg }};cursor:pointer;transition:border-color .2s,background .2s,transform .2s" style-hover="transform:translateY(-2px)">
+<div style="position:relative;height:124px;border-radius:12px;background:#F6F3EE;display:flex;align-items:center;justify-content:center;overflow:hidden">
+<div style="flex:none;transform:scale({{ c.ts }})"><dc-import name="Tech Item Art" item="{{ c.id }}" hint-size="40px,40px"></dc-import></div>
+<sc-if value="{{ c.instant }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:8px;top:8px;padding:4px 8px;border-radius:999px;background:#FFFFFF;font-size:11px;font-weight:700;color:#0A5140">Same-day</div></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px;padding:0 4px">
+<div style="font-size:14px;font-weight:700;line-height:1.25">{{ c.name }}</div>
+<div style="font-size:12px;color:#6B6F74">{{ c.spec }}</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 4px">
+<div style="font-size:15px;font-weight:800">{{ c.priceLabel }}<span style="font-size:12px;font-weight:600;color:#6B6F74">{{ per }}</span></div>
+<sc-if value="{{ c.showBtn }}" hint-placeholder-val="{{ true }}"><div style="height:32px;padding:0 12px;border-radius:10px;background:{{ c.btnBg }};color:{{ c.btnColor }};font-size:13px;font-weight:700;display:flex;align-items:center;white-space:nowrap;transition:background .2s">{{ c.btnLabel }}</div></sc-if>
+<sc-if value="{{ c.showStepper }}" hint-placeholder-val="{{ false }}"><div style="height:32px;border-radius:10px;background:#0E6B53;color:#FFFFFF;display:flex;align-items:center;gap:2px;padding:0 3px"><div onClick="{{ c.onDec }}" style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">−</div><div style="min-width:16px;text-align:center;font-size:13px;font-weight:800">{{ c.qty }}</div><div onClick="{{ c.onInc }}" style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700">+</div></div></sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:16px;border-radius:18px;background:#F6F5F1">
+<sc-if value="{{ hasDiscount }}" hint-placeholder-val="{{ true }}"><div style="display:flex;justify-content:space-between;font-size:14px"><div style="color:#0A5140;font-weight:700">{{ bundleName }} bundle −20%</div><div style="color:#0A5140;font-weight:700">−{{ discountLabel }}</div></div></sc-if>
+<sc-if value="{{ brokenBundle }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:#B5400F;font-weight:600">Add back the {{ missingName }} to keep your bundle discount.</div></sc-if>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:13px;color:#6B6F74;font-weight:600">{{ count }} items · {{ billingWord }}</div><div style="display:flex;align-items:baseline;gap:4px"><div style="font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1">{{ totalLabel }}</div><div style="font-size:16px;font-weight:700;color:#6B6F74">{{ per }}</div></div></div>
+<div style="font-size:13px;color:#6B6F74;text-align:right;line-height:1.45">Delivery &amp; setup free<br>Cancel anytime</div>
+</div>
+<a href="#checkout" style="display:flex;align-items:center;justify-content:center;gap:10px;height:56px;border-radius:14px;background:#0E6B53;color:#FFFFFF;font-size:17px;font-weight:800;transition:background .2s,transform .1s" style-hover="background:#0A5140;color:#FFFFFF" style-active="transform:scale(.98)">Rent Your Setup →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="checkout" style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F74">02 · Checkout · Desktop</div>
+<div data-screen-label="Checkout desktop" style="position:relative;width:1440px;background:#F6F5F1;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(20,20,20,.12)">
+<div style="display:flex;align-items:center;gap:20px;padding:16px 40px;background:#FFFFFF;border-bottom:1px solid #ECEAE4">
+<div style="font-weight:800;font-size:24px;letter-spacing:-.04em">monis<span style="color:#0E6B53">.rent</span></div>
+<div style="flex:1"></div>
+<a href="#" style="font-size:15px;font-weight:700">← Back to builder</a>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 500px;gap:24px;padding:32px 40px 48px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1">Your setup</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px;align-items:start">
+<div style="border-radius:20px;overflow:hidden;border:1px solid #ECEAE4"><dc-import name="Tech Scene" desk="{{ desk }}" chair="{{ chair }}" monitors="{{ monitors }}" acc="{{ acc }}" hint-size="100%,300px"></dc-import></div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:20px;background:#FFFFFF;border:1px solid #ECEAE4">
+<div style="font-size:15px;font-weight:800">What happens next</div>
+<div style="display:flex;gap:12px"><div style="flex:none;width:26px;height:26px;border-radius:50%;background:#E3F1EA;color:#0A5140;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">1</div><div style="font-size:14px;color:#3C4043;line-height:1.45">We deliver {{ deliveryWhen }} and set everything up.</div></div>
+<div style="display:flex;gap:12px"><div style="flex:none;width:26px;height:26px;border-radius:50%;background:#E3F1EA;color:#0A5140;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">2</div><div style="font-size:14px;color:#3C4043;line-height:1.45">Swap or add gear anytime from your account.</div></div>
+<div style="display:flex;gap:12px"><div style="flex:none;width:26px;height:26px;border-radius:50%;background:#E3F1EA;color:#0A5140;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">3</div><div style="font-size:14px;color:#3C4043;line-height:1.45">Leaving Bali? We pick it all up, no fee.</div></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;padding:8px 20px;border-radius:20px;background:#FFFFFF;border:1px solid #ECEAE4">
+<sc-for list="{{ lines }}" as="l" hint-placeholder-count="5">
+<div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid #F0EEE9">
+<div style="flex:none;width:64px;height:64px;border-radius:12px;background:#F6F3EE;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="flex:none;transform:scale({{ l.ts }})"><dc-import name="Tech Item Art" item="{{ l.id }}" hint-size="30px,30px"></dc-import></div></div>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><div style="font-size:15px;font-weight:700">{{ l.name }}</div><div style="font-size:13px;color:#6B6F74">{{ l.spec }}</div></div>
+<div onClick="{{ l.onRemove }}" style="font-size:13px;font-weight:600;color:#6B6F74;cursor:pointer">Remove</div>
+<div style="width:80px;text-align:right;font-size:15px;font-weight:800">{{ l.price }}<span style="font-size:12px;font-weight:600;color:#6B6F74">{{ per }}</span></div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:24px;background:#FFFFFF;border:1px solid #ECEAE4">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:14px;font-weight:800">Billing</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border-radius:14px;background:#F4F3EF">
+<sc-for list="{{ billingOpts }}" as="bo" hint-placeholder-count="2">
+<div onClick="{{ bo.onClick }}" style="height:40px;border-radius:10px;background:{{ bo.bg }};box-shadow:{{ bo.shadow }};display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:700;cursor:pointer">{{ bo.label }}<span style="font-size:11px;font-weight:800;color:#B5400F">{{ bo.note }}</span></div>
+</sc-for>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="font-size:14px;font-weight:800">Delivery</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<sc-for list="{{ days }}" as="d" hint-placeholder-count="3">
+<div onClick="{{ d.onClick }}" style="display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;border:2px solid {{ d.border }};background:{{ d.bg }};cursor:pointer"><div style="font-size:14px;font-weight:700">{{ d.label }}</div><div style="font-size:12px;color:#6B6F74">{{ d.sub }}</div></div>
+</sc-for>
+</div>
+<div style="display:flex;gap:8px">
+<sc-for list="{{ slots }}" as="sl" hint-placeholder-count="3">
+<div onClick="{{ sl.onClick }}" style="flex:1;height:36px;border-radius:10px;border:1.5px solid {{ sl.border }};background:{{ sl.bg }};color:{{ sl.color }};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;cursor:pointer">{{ sl.label }}</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;border:1.5px solid #E2E0DA"><div style="font-size:12px;color:#6B6F74">Address</div><div style="font-size:14px;font-weight:600">Villa Kayu 3, Jl. Pantai Berawa, Canggu</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:9px;padding-top:4px;font-size:14px">
+<div style="display:flex;justify-content:space-between"><div style="color:#5F6368">Subtotal · {{ count }} items</div><div style="font-weight:700">{{ subtotalLabel }}</div></div>
+<sc-if value="{{ hasDiscount }}" hint-placeholder-val="{{ true }}"><div style="display:flex;justify-content:space-between;color:#0A5140;font-weight:700"><div>{{ bundleName }} bundle −20%</div><div>−{{ discountLabel }}</div></div></sc-if>
+<div style="display:flex;justify-content:space-between"><div style="color:#5F6368">Delivery, setup &amp; pickup</div><div style="font-weight:700;color:#0A5140">Free</div></div>
+<div style="height:1px;background:#ECEAE4;margin:4px 0"></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:16px;font-weight:800">Total {{ billingWord }}</div><div style="font-size:34px;font-weight:800;letter-spacing:-.03em">{{ totalLabel }}<span style="font-size:15px;color:#6B6F74">{{ per }}</span></div></div>
+</div>
+<div onClick="{{ onRent }}" style="display:flex;align-items:center;justify-content:center;height:58px;border-radius:14px;background:#0E6B53;color:#FFFFFF;font-size:17px;font-weight:800;cursor:pointer;transition:background .2s,transform .1s" style-hover="background:#0A5140" style-active="transform:scale(.98)">Rent this setup</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#0A5140;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:#16A34A"></span>Arrives {{ deliveryWhen }}</div>
+</div>
+</div>
+<div style="position:absolute;inset:0;overflow:hidden;display:flex;align-items:center;justify-content:center;background:rgba(246,245,241,.9);opacity:{{ overlayO }};pointer-events:{{ overlayPE }};transition:opacity .35s ease">
+{{ confetti }}
+<div style="position:relative;width:600px;display:flex;flex-direction:column;align-items:center;gap:18px;padding:40px;border-radius:28px;background:#FFFFFF;box-shadow:0 30px 80px rgba(20,20,20,.16);text-align:center;transform:{{ cardT }};transition:transform .55s cubic-bezier(.34,1.56,.64,1)">
+<div style="width:68px;height:68px;border-radius:50%;background:#0E6B53;display:flex;align-items:center;justify-content:center"><div style="width:28px;height:15px;border-left:5px solid #FFFFFF;border-bottom:5px solid #FFFFFF;transform:translateY(-3px) rotate(-45deg)"></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700;color:#6B6F74;letter-spacing:.06em;text-transform:uppercase">Order MR-48213</div><div style="font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.05">You're all set. See you {{ seeYou }}.</div></div>
+<div style="font-size:16px;line-height:1.5;color:#5F6368;max-width:440px">Our team arrives {{ deliveryWhen }} at Villa Kayu 3 and sets everything up. You just plug in your laptop.</div>
+<div style="width:100%;border-radius:18px;overflow:hidden;border:1px solid #ECEAE4"><dc-import name="Tech Scene" desk="{{ desk }}" chair="{{ chair }}" monitors="{{ monitors }}" acc="{{ acc }}" hint-size="100%,340px"></dc-import></div>
+<div style="display:flex;gap:10px">
+<div style="padding:14px 22px;border-radius:14px;background:#0E6B53;color:#FFFFFF;font-weight:800;font-size:15px">Track delivery</div>
+<div onClick="{{ onClose }}" style="padding:14px 22px;border-radius:14px;background:#F4F3EF;font-weight:800;font-size:15px;cursor:pointer">Back to builder</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6B6F74">03 · Mobile</div>
+<div style="display:flex;gap:40px;align-items:flex-start">
+<div data-screen-label="Builder mobile" style="position:relative;width:390px;height:844px;background:#F6F5F1;border-radius:46px;overflow:hidden;border:10px solid #121417;box-shadow:0 30px 80px rgba(20,20,20,.18)">
+<div style="height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700;background:#FFFFFF"><div>9:41</div><div style="width:96px;height:26px;border-radius:13px;background:#121417"></div><div style="width:24px;height:11px;border-radius:3px;background:#121417"></div></div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 18px 12px;background:#FFFFFF;border-bottom:1px solid #ECEAE4">
+<div style="font-weight:800;font-size:20px;letter-spacing:-.04em">monis<span style="color:#0E6B53">.rent</span></div>
+<div style="padding:6px 10px;border-radius:999px;background:#E3F1EA;color:#0A5140;font-size:12px;font-weight:700">Next-day delivery</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:14px 14px 0">
+<div style="font-size:26px;font-weight:800;letter-spacing:-.03em">Build your workspace</div>
+<div style="position:relative;border-radius:18px;overflow:hidden;border:1px solid #ECEAE4"><dc-import name="Tech Scene" desk="{{ desk }}" chair="{{ chair }}" monitors="{{ monitors }}" acc="{{ acc }}" hint-size="100%,220px"></dc-import><div style="position:absolute;right:10px;top:10px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);font-size:12px;font-weight:700">{{ count }} items</div></div>
+<div style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px">
+<sc-for list="{{ bundles }}" as="b" hint-placeholder-count="4">
+<div onClick="{{ b.onClick }}" style="flex:none;display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#FFFFFF;border:2px solid {{ b.border }};font-size:13px;font-weight:700;white-space:nowrap;cursor:pointer">{{ b.short }}<sc-if value="{{ b.hasTag }}" hint-placeholder-val="{{ true }}"><span style="font-size:11px;color:#B5400F;font-weight:800">−20%</span></sc-if></div>
+</sc-for>
+</div>
+<div style="display:flex;gap:4px;border-bottom:1px solid #ECEAE4">
+<sc-for list="{{ tabs }}" as="tb" hint-placeholder-count="4">
+<div onClick="{{ tb.onClick }}" style="flex:1;padding:8px 0 10px;border-bottom:2.5px solid {{ tb.line }};margin-bottom:-1px;font-size:13px;font-weight:700;color:{{ tb.color }};text-align:center;cursor:pointer">{{ tb.short }}</div>
+</sc-for>
+</div>
+<div style="display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px 4px">
+<sc-for list="{{ cards }}" as="c" hint-placeholder-count="3">
+<div onClick="{{ c.onPick }}" style="flex:none;width:150px;display:flex;flex-direction:column;gap:8px;padding:6px 6px 10px;border-radius:16px;border:2px solid {{ c.border }};background:{{ c.bg }};cursor:pointer">
+<div style="height:96px;border-radius:11px;background:#F6F3EE;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="flex:none;transform:scale({{ c.tsM }})"><dc-import name="Tech Item Art" item="{{ c.id }}" hint-size="40px,40px"></dc-import></div></div>
+<div style="padding:0 4px;display:flex;flex-direction:column;gap:4px"><div style="font-size:13px;font-weight:700;line-height:1.25;height:32px;overflow:hidden">{{ c.name }}</div><div style="display:flex;align-items:center;justify-content:space-between"><div style="font-size:14px;font-weight:800">{{ c.priceLabel }}<span style="font-size:11px;color:#6B6F74">{{ per }}</span></div><div style="width:28px;height:28px;border-radius:9px;background:{{ c.btnBg }};color:{{ c.btnColor }};display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800">{{ c.mIcon }}</div></div></div>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:12px;padding:14px 16px 28px;background:#FFFFFF;border-top:1px solid #ECEAE4">
+<div style="display:flex;align-items:center;justify-content:space-between">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;border-radius:11px;background:#F4F3EF;width:176px">
+<sc-for list="{{ billingOpts }}" as="bo" hint-placeholder-count="2"><div onClick="{{ bo.onClick }}" style="height:30px;border-radius:8px;background:{{ bo.bg }};box-shadow:{{ bo.shadow }};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;cursor:pointer">{{ bo.label }}</div></sc-for>
+</div>
+<div style="padding:5px 10px;border-radius:999px;background:#FFEDE3;color:#B5400F;font-size:12px;font-weight:800">Save ~30% monthly</div>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<div style="display:flex;flex-direction:column"><div style="font-size:12px;color:#6B6F74;font-weight:600">{{ count }} items</div><div style="font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1">{{ totalLabel }}<span style="font-size:13px;color:#6B6F74">{{ per }}</span></div></div>
+<a href="#checkout-m" style="flex:1;height:52px;border-radius:14px;background:#0E6B53;color:#FFFFFF;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center" style-hover="color:#FFFFFF">Rent Your Setup</a>
+</div>
+</div>
+</div>
+
+<div id="checkout-m" data-screen-label="Checkout mobile" style="position:relative;width:390px;height:844px;background:#F6F5F1;border-radius:46px;overflow:hidden;border:10px solid #121417;box-shadow:0 30px 80px rgba(20,20,20,.18)">
+<div style="height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:14px;font-weight:700;background:#FFFFFF"><div>9:41</div><div style="width:96px;height:26px;border-radius:13px;background:#121417"></div><div style="width:24px;height:11px;border-radius:3px;background:#121417"></div></div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 18px 12px;background:#FFFFFF;border-bottom:1px solid #ECEAE4"><div style="font-size:18px;font-weight:700">←</div><div style="font-size:17px;font-weight:800">Your setup</div></div>
+<div style="display:flex;flex-direction:column;gap:12px;padding:14px;height:560px;overflow-y:auto;scrollbar-width:none">
+<div style="display:flex;flex-direction:column;padding:4px 14px;border-radius:18px;background:#FFFFFF;border:1px solid #ECEAE4">
+<sc-for list="{{ lines }}" as="l" hint-placeholder-count="5">
+<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F0EEE9">
+<div style="flex:none;width:48px;height:48px;border-radius:10px;background:#F6F3EE;display:flex;align-items:center;justify-content:center;overflow:hidden"><div style="flex:none;transform:scale({{ l.tsS }})"><dc-import name="Tech Item Art" item="{{ l.id }}" hint-size="24px,24px"></dc-import></div></div>
+<div style="flex:1;min-width:0;font-size:14px;font-weight:700;line-height:1.25">{{ l.name }}</div>
+<div style="font-size:14px;font-weight:800">{{ l.price }}</div>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:18px;background:#FFFFFF;border:1px solid #ECEAE4;font-size:14px">
+<div style="display:flex;justify-content:space-between"><div style="color:#5F6368">Delivery</div><div style="font-weight:700">{{ deliveryShort }}</div></div>
+<sc-if value="{{ hasDiscount }}" hint-placeholder-val="{{ true }}"><div style="display:flex;justify-content:space-between;color:#0A5140;font-weight:700"><div>Bundle −20%</div><div>−{{ discountLabel }}</div></div></sc-if>
+<div style="display:flex;justify-content:space-between"><div style="color:#5F6368">Setup &amp; pickup</div><div style="font-weight:700;color:#0A5140">Free</div></div>
+</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:12px;padding:14px 16px 28px;background:#FFFFFF;border-top:1px solid #ECEAE4">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-size:15px;font-weight:800">Total {{ billingWord }}</div><div style="font-size:26px;font-weight:800;letter-spacing:-.03em">{{ totalLabel }}<span style="font-size:13px;color:#6B6F74">{{ per }}</span></div></div>
+<div onClick="{{ onRent }}" style="height:52px;border-radius:14px;background:#0E6B53;color:#FFFFFF;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;cursor:pointer">Rent this setup</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startBundle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;scratch&quot;,&quot;essentials&quot;,&quot;founders&quot;,&quot;trading&quot;],&quot;default&quot;:&quot;founders&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showHotspots&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  I = {
+    desk_electric: { name: 'Electrical Adjustable Desk', short: 'Electric desk', spec: 'Sit-stand, 70–118 cm', wk: 9, cat: 'desk', ts: .38, tsM: .28, row: .12 },
+    desk_dual: { name: 'Dual-Motor Standing Desk', short: 'Dual-motor desk', spec: '3-stage lift, 120 kg load', wk: 12, cat: 'desk', ts: .38, tsM: .28, row: .12 },
+    desk_mech: { name: 'Mechanical Adjustable Desk', short: 'Crank desk', spec: 'Crank lift, no power needed', wk: 6, cat: 'desk', ts: .38, tsM: .28, row: .12 },
+    chair: { name: 'Ergonomic Office Chair', short: 'Chair', spec: '4D arms, lumbar, headrest', wk: 8, cat: 'chair', ts: .48, tsM: .38, row: .25 },
+    mon24: { name: '24" Full HD Monitor', short: '24" monitor', spec: '144 Hz IPS', wk: 6, cat: 'mon', instant: true, ts: .8, tsM: .6, row: .38 },
+    mon27: { name: '27" 4K Monitor', short: '27" 4K', spec: 'USB-C, 100% sRGB', wk: 9, cat: 'mon', instant: true, ts: .74, tsM: .52, row: .34 },
+    mon34: { name: '34" Curved Monitor', short: '34" curved', spec: 'WQHD, 180 Hz', wk: 14, cat: 'mon', instant: true, ts: .6, tsM: .44, row: .26 },
+    keyboard: { name: 'Logitech MX Keyboard', short: 'MX Keyboard', spec: 'Switch across 3 devices', wk: 3, cat: 'acc', instant: true, ts: 1.3, tsM: 1, row: .46 },
+    mouse: { name: 'Logitech MX Master S3', short: 'MX Master', spec: '8K DPI, 70-day battery', wk: 2.5, cat: 'acc', instant: true, ts: 2.8, tsM: 2.2, row: 1.7 },
+    laptopstand: { name: 'Ergonomic Laptop Stand', short: 'Laptop stand', spec: 'Fits 10–17" laptops', wk: 1.5, cat: 'acc', instant: true, ts: 1.1, tsM: .85, row: .6 },
+    lamp: { name: 'Smart LED Desk Lamp', short: 'Desk lamp', spec: '2600–5000 K, voice control', wk: 2, cat: 'acc', instant: true, ts: .8, tsM: .62, row: .42 },
+    lightbar: { name: 'Monitor Light Bar', short: 'Light bar', spec: 'No glare, frees desk space', wk: 2, cat: 'acc', ts: 1.3, tsM: 1, row: .5 },
+    power: { name: 'Smart Power Strip', short: 'Power strip', spec: 'EU / US / AU + 3 USB', wk: 1, cat: 'acc', instant: true, ts: 1.3, tsM: 1, row: .52 }
+  };
+  B = [
+    { id: 'scratch', name: 'Start fresh', short: 'Start fresh', desc: 'An empty room. Build it piece by piece.', items: [] },
+    { id: 'essentials', name: 'The Essentials', short: 'Essentials', desc: 'Standing desk and ergonomic chair.', items: ['desk_electric', 'chair'] },
+    { id: 'founders', name: 'The Founders Setup', short: 'Founders', desc: '4K USB-C screen, laptop stand, peripherals, power.', items: ['desk_electric', 'chair', 'mon27', 'laptopstand', 'keyboard', 'mouse', 'power'] },
+    { id: 'trading', name: 'The Trading Setup', short: 'Trading', desc: 'Ultrawide curved screen, dual-motor desk, light bar.', items: ['desk_dual', 'chair', 'mon34', 'keyboard', 'mouse', 'lightbar', 'power'] }
+  ];
+  ACC = ['keyboard', 'mouse', 'laptopstand', 'lamp', 'lightbar', 'power'];
+  fromBundle(id) {
+    const b = this.B.find(x => x.id === id) || this.B[2];
+    const st = { desk: null, chair: false, monitors: [], acc: {}, bundle: b.id };
+    b.items.forEach(k => {
+      const c = this.I[k].cat;
+      if (c === 'desk') st.desk = k; else if (c === 'chair') st.chair = true; else if (c === 'mon') st.monitors.push(k); else st.acc[k] = 1;
+    });
+    return st;
+  }
+  state = { ...this.fromBundle(this.props.startBundle ?? 'founders'), billing: 'week', tab: 'mon', day: 'tomorrow', slot: '12–16', booked: false, toast: '', toastOn: false };
+  flash(m) { clearTimeout(this.tt); this.setState({ toast: m, toastOn: true }); this.tt = setTimeout(() => this.setState({ toastOn: false }), 1700); }
+  componentWillUnmount() { clearTimeout(this.tt); }
+  needDesk(patch) {
+    if (!this.state.desk) { patch.desk = 'desk_electric'; this.setState(patch); this.flash('Added an Electrical Adjustable Desk to put it on'); return true; }
+    return false;
+  }
+  addMon(id) {
+    const m = this.state.monitors;
+    if (m.length >= 2) { this.flash('Two screens max per desk'); return; }
+    const patch = { monitors: [...m, id] };
+    if (!this.needDesk(patch)) { this.setState(patch); this.flash(this.I[id].name + ' added'); }
+  }
+  remMon(id) { const m = [...this.state.monitors]; const i = m.lastIndexOf(id); if (i >= 0) { m.splice(i, 1); this.setState({ monitors: m }); } }
+  toggleAcc(id) {
+    const acc = { ...this.state.acc };
+    if (acc[id]) { delete acc[id]; this.setState({ acc }); return; }
+    acc[id] = 1;
+    const patch = { acc };
+    if (!this.needDesk(patch)) { this.setState(patch); this.flash(this.I[id].name + ' added'); }
+  }
+  toggleChair() {
+    if (this.state.chair) { this.setState({ chair: false }); return; }
+    this.setState({ chair: true }); this.flash('Ergonomic Office Chair added');
+  }
+  pickDesk(id) { if (this.state.desk !== id) { this.setState({ desk: id }); this.flash(this.I[id].name + ' in place'); } }
+  renderVals() {
+    const s = this.state, I = this.I;
+    const wk = s.billing === 'week';
+    const up = w => wk ? w : Math.round(w * 3.03);
+    const r2 = n => Math.round(n * 100) / 100;
+    const fmt = n => '$' + (n % 1 ? n.toFixed(2) : n);
+    const per = wk ? '/wk' : '/mo';
+    const items = [];
+    if (s.desk) items.push(s.desk);
+    if (s.chair) items.push('chair');
+    s.monitors.forEach(m => items.push(m));
+    this.ACC.forEach(k => { if (s.acc[k]) items.push(k); });
+    const cnt = {}; items.forEach(k => { cnt[k] = (cnt[k] || 0) + 1; });
+    const subtotal = r2(items.reduce((t, k) => t + up(I[k].wk), 0));
+    const b = this.B.find(x => x.id === s.bundle);
+    const need = {}; b.items.forEach(k => { need[k] = (need[k] || 0) + 1; });
+    const missing = Object.keys(need).filter(k => (cnt[k] || 0) < need[k]);
+    const intact = b.items.length > 0 && missing.length === 0;
+    const discount = intact ? r2(b.items.reduce((t, k) => t + up(I[k].wk), 0) * .2) : 0;
+    const total = r2(subtotal - discount);
+    const card = (id) => {
+      const it = I[id], qty = cnt[id] || 0, on = qty > 0;
+      let onPick, btnLabel, showStepper = false;
+      if (it.cat === 'desk') { onPick = () => this.pickDesk(id); btnLabel = on ? '✓ Selected' : 'Select'; }
+      else if (it.cat === 'chair') { onPick = () => this.toggleChair(); btnLabel = on ? '✓ Added' : '+ Add'; }
+      else if (it.cat === 'mon') { onPick = () => this.addMon(id); btnLabel = '+ Add'; showStepper = on; }
+      else { onPick = () => this.toggleAcc(id); btnLabel = on ? '✓ Added' : '+ Add'; }
+      return { id, name: it.name, spec: it.spec, instant: !!it.instant, ts: it.ts, tsM: it.tsM, qty,
+        priceLabel: fmt(up(it.wk)), onPick, btnLabel, showBtn: !showStepper, showStepper,
+        onInc: e => { e.stopPropagation(); this.addMon(id); }, onDec: e => { e.stopPropagation(); this.remMon(id); },
+        btnBg: on ? '#0E6B53' : '#121417', btnColor: '#FFFFFF', mIcon: on ? (it.cat === 'mon' ? '×' + qty : '✓') : '+',
+        border: on ? '#0E6B53' : '#ECEAE4', bg: on ? '#F2F9F5' : '#FFFFFF' };
+    };
+    const catIds = { desk: ['desk_electric', 'desk_dual', 'desk_mech'], chair: ['chair'], mon: ['mon24', 'mon27', 'mon34'], acc: this.ACC };
+    const remove = (k, i) => () => {
+      const c = I[k].cat;
+      if (c === 'desk') this.setState({ desk: null }); else if (c === 'chair') this.setState({ chair: false });
+      else if (c === 'mon') { const m = [...s.monitors]; m.splice(i, 1); this.setState({ monitors: m }); }
+      else { const acc = { ...s.acc }; delete acc[k]; this.setState({ acc }); }
+    };
+    let mi = 0;
+    const lineData = items.map(k => { const idx = I[k].cat === 'mon' ? mi++ : 0; return { k, idx }; });
+    const hot = [];
+    if (this.props.showHotspots ?? true) {
+      if (!s.desk) hot.push({ label: 'Pick a desk', x: 40, y: 62, onClick: () => this.pickDesk('desk_electric') });
+      if (s.monitors.length === 0) hot.push({ label: 'Add a monitor', x: 41, y: 26, onClick: () => this.addMon('mon27') });
+      else if (s.monitors.length === 1) hot.push({ label: 'Second screen', x: 62, y: 24, onClick: () => this.addMon('mon24') });
+      if (!s.chair) hot.push({ label: 'Add a chair', x: 43, y: 74, onClick: () => this.toggleChair() });
+      if (!s.acc.lamp) hot.push({ label: 'Desk lamp', x: 71, y: 42, onClick: () => this.toggleAcc('lamp') });
+    }
+    const dayOpts = [['today', 'Today', 'Same-day'], ['tomorrow', 'Tomorrow', 'Tue 29 Sep'], ['later', 'Wed 30 Sep', 'Or later']];
+    const d = dayOpts.find(x => x[0] === s.day);
+    const whenMap = { today: 'today, ' + s.slot, tomorrow: 'tomorrow, Tue 29 Sep, ' + s.slot, later: 'Wed 30 Sep, ' + s.slot };
+    const confetti = s.booked ? Array.from({ length: 44 }, (_, i) => React.createElement('div', { key: i, style: {
+      position: 'absolute', left: ((i * 37) % 100) + '%', top: -20, width: 9, height: i % 3 ? 14 : 9, borderRadius: i % 3 ? 2 : '50%',
+      background: ['#0E6B53', '#FF7A45', '#16A34A', '#F6C453', '#121417'][i % 5],
+      animation: 'fall ' + (2 + (i % 7) * .3) + 's ' + ((i % 9) * .1) + 's cubic-bezier(.3,.6,.5,1) forwards' } })) : null;
+    return {
+      desk: s.desk, chair: s.chair, monitors: s.monitors, acc: s.acc, count: items.length, per,
+      billingWord: wk ? 'per week' : 'per month',
+      billingOpts: [['week', 'Weekly', ''], ['month', 'Monthly', 'Save ~30%']].map(([id, label, note]) => ({ label, note,
+        bg: s.billing === id ? '#FFFFFF' : 'transparent', shadow: s.billing === id ? '0 1px 3px rgba(0,0,0,.12)' : 'none', onClick: () => this.setState({ billing: id }) })),
+      bundles: this.B.map(x => {
+        const on = s.bundle === x.id;
+        const p = r2(x.items.reduce((t, k) => t + up(I[k].wk), 0) * .8);
+        return { ...x, hasTag: x.items.length > 0, border: on ? '#0E6B53' : '#ECEAE4',
+          priceLabel: x.items.length ? 'From ' + fmt(p) + per : 'Pay per item',
+          onClick: () => { this.setState(this.fromBundle(x.id)); this.flash(x.items.length ? x.name + ' loaded. Make it yours.' : 'Fresh start'); } };
+      }),
+      tabs: [['desk', 'Desk', 'Desk', s.desk ? 1 : 0], ['chair', 'Chair', 'Chair', s.chair ? 1 : 0], ['mon', 'Monitors', 'Monitors', s.monitors.length], ['acc', 'Accessories', 'Extras', Object.keys(s.acc).length]].map(([id, label, short, n]) => {
+        const on = s.tab === id;
+        return { label, short, n, line: on ? '#121417' : 'transparent', color: on ? '#121417' : '#6B6F74',
+          pillBg: n ? '#E3F1EA' : '#F4F3EF', pillColor: n ? '#0A5140' : '#6B6F74', onClick: () => this.setState({ tab: id }) };
+      }),
+      cards: catIds[s.tab].map(card),
+      hotspots: hot,
+      setupChips: lineData.map(({ k, idx }) => ({ label: I[k].short, onRemove: remove(k, idx) })),
+      isEmpty: items.length === 0,
+      lines: lineData.map(({ k, idx }) => ({ id: k, name: I[k].name, spec: I[k].spec, price: fmt(up(I[k].wk)), ts: I[k].row, tsS: I[k].row * .75, onRemove: remove(k, idx) })),
+      hasDiscount: intact, discountLabel: fmt(discount), bundleName: b.name.replace(/^The /, '').replace(/ Setup$/, ''),
+      brokenBundle: b.items.length > 0 && !intact, missingName: missing.length ? I[missing[0]].short.toLowerCase() : '',
+      subtotalLabel: fmt(subtotal), totalLabel: fmt(total),
+      toast: s.toast, toastO: s.toastOn ? 1 : 0, toastT: s.toastOn ? 'translateY(0)' : 'translateY(16px)',
+      days: dayOpts.map(([id, label, sub]) => { const on = s.day === id; return { label, sub, border: on ? '#0E6B53' : '#ECEAE4', bg: on ? '#F2F9F5' : '#FFFFFF', onClick: () => this.setState({ day: id }) }; }),
+      slots: ['8–12', '12–16', '16–20'].map(l => { const on = s.slot === l; return { label: l, border: on ? '#121417' : '#E2E0DA', bg: on ? '#121417' : '#FFFFFF', color: on ? '#FFFFFF' : '#121417', onClick: () => this.setState({ slot: l }) }; }),
+      deliveryWhen: whenMap[s.day], deliveryShort: d[1] + ', ' + s.slot, seeYou: s.day === 'today' ? 'later today' : (s.day === 'tomorrow' ? 'tomorrow' : 'Wednesday'),
+      onRent: () => { if (items.length) this.setState({ booked: true }); },
+      onClose: () => this.setState({ booked: false }),
+      overlayO: s.booked ? 1 : 0, overlayPE: s.booked ? 'auto' : 'none',
+      cardT: s.booked ? 'scale(1) translateY(0)' : 'scale(.92) translateY(30px)',
+      confetti
+    };
+  }
+}
+</script>
+</body>
+</html>

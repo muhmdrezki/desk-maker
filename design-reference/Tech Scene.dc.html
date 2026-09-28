@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div data-sid="{{ sid }}" style="position:relative;width:100%;aspect-ratio:800/520;overflow:hidden;background:#F3EEE7">
+<div style="position:absolute;left:0;top:0;width:800px;height:520px;transform-origin:0 0;transform:scale({{ scale }})">
+<div style="position:absolute;left:48px;top:44px;width:220px;height:290px;box-sizing:border-box;border:10px solid #FFFFFF;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,#FDEBD3,#F7CFA3)">
+<div style="position:absolute;left:96px;top:44px;width:36px;height:36px;border-radius:50%;background:#FFF6E6"></div>
+<div style="position:absolute;left:-30px;top:190px;width:280px;height:120px;border-radius:50%;background:#A9CFA0"></div>
+<div style="position:absolute;left:120px;top:210px;width:160px;height:90px;border-radius:50%;background:#8DBE88"></div>
+<div style="position:absolute;left:150px;top:-30px;width:90px;height:34px;border-radius:50%;background:#3F8F63;transform:rotate(30deg)"></div>
+<div style="position:absolute;left:120px;top:-6px;width:84px;height:28px;border-radius:50%;background:#2E7D5B;transform:rotate(-14deg)"></div>
+<div style="position:absolute;left:168px;top:16px;width:70px;height:26px;border-radius:50%;background:#4FA374;transform:rotate(58deg)"></div>
+<div style="position:absolute;left:95px;top:0;width:10px;height:270px;background:#FFFFFF"></div>
+</div>
+<div style="position:absolute;left:38px;top:330px;width:240px;height:10px;border-radius:5px;background:#FFFFFF"></div>
+<div style="position:absolute;left:200px;top:44px;width:200px;height:400px;background:linear-gradient(180deg,rgba(255,236,204,0),rgba(255,236,204,.6) 60%,rgba(255,236,204,0));transform:skewX(30deg);transform-origin:0 0"></div>
+<div style="position:absolute;left:650px;top:70px;width:104px;height:136px;box-sizing:border-box;border:8px solid #FFFFFF;border-radius:4px;background:#F6E3CF;overflow:hidden;box-shadow:0 6px 16px rgba(60,40,20,.08)">
+<div style="position:absolute;left:18px;top:34px;width:52px;height:80px;border-radius:26px 26px 0 0;background:#D9774E"></div>
+<div style="position:absolute;left:44px;top:18px;width:24px;height:24px;border-radius:50%;background:#2E7D5B"></div>
+</div>
+<div style="position:absolute;left:0;top:440px;width:800px;height:80px;background:repeating-linear-gradient(90deg,#E8DAC5 0 118px,#DFCFB7 118px 120px)"></div>
+<div style="position:absolute;left:0;top:436px;width:800px;height:5px;background:#E0D0B8"></div>
+<div style="position:absolute;left:150px;top:432px;width:500px;height:22px;border-radius:50%;background:rgba(80,55,30,.12);opacity:{{ o.desk }};transition:opacity .35s ease"></div>
+<div style="position:absolute;left:668px;top:250px"><dc-import name="Tech Item Art" item="plant" hint-size="110px,200px"></dc-import></div>
+<div style="position:absolute;left:470px;top:418px;opacity:{{ o.power }};transform:{{ t.power }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="power" hint-size="110px,24px"></dc-import></div>
+<div style="position:absolute;left:160px;top:270px;opacity:{{ o.desk_electric }};transform:{{ t.desk_electric }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="desk_electric" hint-size="480px,175px"></dc-import></div>
+<div style="position:absolute;left:160px;top:270px;opacity:{{ o.desk_dual }};transform:{{ t.desk_dual }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="desk_dual" hint-size="480px,175px"></dc-import></div>
+<div style="position:absolute;left:160px;top:270px;opacity:{{ o.desk_mech }};transform:{{ t.desk_mech }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="desk_mech" hint-size="480px,175px"></dc-import></div>
+<div style="position:absolute;left:{{ mA.left }}px;top:{{ mA.top }}px;opacity:{{ mA.o }};transform:{{ mA.t }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1),left .45s ease,top .3s ease"><dc-import name="Tech Item Art" item="{{ mA.id }}" hint-size="150px,118px"></dc-import></div>
+<div style="position:absolute;left:{{ mB.left }}px;top:{{ mB.top }}px;opacity:{{ mB.o }};transform:{{ mB.t }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1),left .45s ease,top .3s ease"><dc-import name="Tech Item Art" item="{{ mB.id }}" hint-size="150px,118px"></dc-import></div>
+<div style="position:absolute;left:{{ lb.left }}px;top:{{ lb.top }}px;opacity:{{ o.lightbar }};transform:{{ t.lightbar }};transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1),left .45s ease,top .3s ease"><dc-import name="Tech Item Art" item="lightbar" hint-size="120px,48px"></dc-import></div>
+<div style="position:absolute;left:170px;top:184px;opacity:{{ o.laptopstand }};transform:{{ t.laptopstand }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="laptopstand" hint-size="100px,86px"></dc-import></div>
+<div style="position:absolute;left:548px;top:130px;opacity:{{ o.lamp }};transform:{{ t.lamp }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="lamp" hint-size="110px,140px"></dc-import></div>
+<div style="position:absolute;left:330px;top:258px;opacity:{{ o.keyboard }};transform:{{ t.keyboard }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="keyboard" hint-size="120px,12px"></dc-import></div>
+<div style="position:absolute;left:468px;top:257px;opacity:{{ o.mouse }};transform:{{ t.mouse }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="mouse" hint-size="24px,13px"></dc-import></div>
+<div style="position:absolute;left:300px;top:500px;width:200px;height:18px;border-radius:50%;background:rgba(80,55,30,.14);opacity:{{ o.chair }};transition:opacity .35s ease"></div>
+<div style="position:absolute;left:315px;top:280px;opacity:{{ o.chair }};transform:{{ t.chair }};transform-origin:50% 100%;transition:opacity .35s ease,transform .5s cubic-bezier(.34,1.56,.64,1)"><dc-import name="Tech Item Art" item="chair" hint-size="170px,240px"></dc-import></div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:800,&quot;height&quot;:520},&quot;desk&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;desk_electric&quot;,&quot;desk_dual&quot;,&quot;desk_mech&quot;],&quot;default&quot;:&quot;desk_electric&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;chair&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;monitors&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;acc&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;}}">
+class Component extends DCLogic {
+  state = { scale: 1 };
+  sid = 'ts' + Math.random().toString(36).slice(2, 9);
+  componentDidMount() { this.attach(); }
+  attach() {
+    const el = document.querySelector('[data-sid="' + this.sid + '"]');
+    if (!el) { this.raf = requestAnimationFrame(() => this.attach()); return; }
+    this.ro = new ResizeObserver(() => { const w = el.offsetWidth; if (w && Math.abs(w / 800 - this.state.scale) > .001) this.setState({ scale: w / 800 }); });
+    this.ro.observe(el);
+  }
+  componentWillUnmount() { this.ro && this.ro.disconnect(); cancelAnimationFrame(this.raf); }
+  renderVals() {
+    const desk = this.props.desk === undefined ? 'desk_electric' : this.props.desk;
+    const chair = this.props.chair ?? true;
+    const mons = this.props.monitors ?? ['mon27'];
+    const a = this.props.acc ?? { keyboard: 1, mouse: 1, lamp: 1 };
+    const SZ = { mon24: [150, 118], mon27: [176, 132], mon34: [230, 130] };
+    const surf = 270, gap = 14;
+    const widths = mons.map(m => SZ[m][0]);
+    const total = widths.reduce((s, w) => s + w, 0) + (mons.length > 1 ? gap : 0);
+    let x = 400 - total / 2;
+    const slots = [0, 1].map(i => {
+      const id = mons[i];
+      if (!id) return { id: i === 0 ? 'mon27' : 'mon24', left: i === 0 ? 312 : 420, top: surf - 132, o: 0, t: 'translateY(-26px) scale(.85)', w: 176, h: 132 };
+      const [w, h] = SZ[id];
+      const s = { id, left: x, top: surf - h, o: 1, t: 'translateY(0) scale(1)', w, h };
+      x += w + gap;
+      return s;
+    });
+    const flags = {
+      desk: !!desk, desk_electric: desk === 'desk_electric', desk_dual: desk === 'desk_dual', desk_mech: desk === 'desk_mech',
+      chair: !!chair, keyboard: !!a.keyboard, mouse: !!a.mouse, laptopstand: !!a.laptopstand, lamp: !!a.lamp,
+      lightbar: !!a.lightbar && mons.length > 0, power: !!a.power
+    };
+    const o = {}, t = {};
+    Object.keys(flags).forEach(k => { o[k] = flags[k] ? 1 : 0; t[k] = flags[k] ? 'translateY(0) scale(1)' : 'translateY(-26px) scale(.85)'; });
+    const A = slots[0];
+    return { sid: this.sid, scale: this.state.scale, o, t, mA: slots[0], mB: slots[1],
+      lb: { left: A.left + A.w / 2 - 60, top: surf - A.h - 6 } };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<sc-if value="{{ is.desk_electric }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:480px;height:175px">
+<div style="position:absolute;left:40px;top:18px;width:400px;height:10px;background:#2A2D31"></div>
+<div style="position:absolute;left:80px;top:28px;width:22px;height:70px;background:#2A2D31"></div>
+<div style="position:absolute;left:83px;top:98px;width:16px;height:66px;background:#3A3E43"></div>
+<div style="position:absolute;left:378px;top:28px;width:22px;height:70px;background:#2A2D31"></div>
+<div style="position:absolute;left:381px;top:98px;width:16px;height:66px;background:#3A3E43"></div>
+<div style="position:absolute;left:41px;top:163px;width:100px;height:12px;border-radius:6px;background:#1E2124"></div>
+<div style="position:absolute;left:339px;top:163px;width:100px;height:12px;border-radius:6px;background:#1E2124"></div>
+<div style="position:absolute;left:0;top:0;width:480px;height:18px;border-radius:4px;background:#E8D5B7"></div>
+<div style="position:absolute;left:0;top:14px;width:480px;height:4px;border-radius:0 0 4px 4px;background:#D6BF9C"></div>
+<div style="position:absolute;left:404px;top:18px;width:46px;height:11px;border-radius:0 0 4px 4px;background:#1E2124"></div>
+<div style="position:absolute;left:410px;top:20px;width:15px;height:6px;border-radius:1px;background:#7EE2A8"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.desk_dual }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:480px;height:175px">
+<div style="position:absolute;left:40px;top:18px;width:400px;height:12px;background:#2A2D31"></div>
+<div style="position:absolute;left:76px;top:30px;width:28px;height:44px;background:#2A2D31"></div>
+<div style="position:absolute;left:79px;top:74px;width:22px;height:44px;background:#3A3E43"></div>
+<div style="position:absolute;left:82px;top:118px;width:16px;height:46px;background:#4A4F55"></div>
+<div style="position:absolute;left:376px;top:30px;width:28px;height:44px;background:#2A2D31"></div>
+<div style="position:absolute;left:379px;top:74px;width:22px;height:44px;background:#3A3E43"></div>
+<div style="position:absolute;left:382px;top:118px;width:16px;height:46px;background:#4A4F55"></div>
+<div style="position:absolute;left:40px;top:163px;width:100px;height:12px;border-radius:6px;background:#1E2124"></div>
+<div style="position:absolute;left:340px;top:163px;width:100px;height:12px;border-radius:6px;background:#1E2124"></div>
+<div style="position:absolute;left:0;top:0;width:480px;height:18px;border-radius:4px;background:#FAFAF8"></div>
+<div style="position:absolute;left:0;top:14px;width:480px;height:4px;border-radius:0 0 4px 4px;background:#DCDCD6"></div>
+<div style="position:absolute;left:404px;top:18px;width:50px;height:12px;border-radius:0 0 4px 4px;background:#1E2124"></div>
+<div style="position:absolute;left:410px;top:20px;width:18px;height:7px;border-radius:1px;background:#7EE2A8"></div>
+<div style="position:absolute;left:432px;top:21px;width:5px;height:5px;border-radius:50%;background:#6B7078"></div>
+<div style="position:absolute;left:441px;top:21px;width:5px;height:5px;border-radius:50%;background:#6B7078"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.desk_mech }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:480px;height:175px">
+<div style="position:absolute;left:40px;top:18px;width:400px;height:9px;background:#3A3E43"></div>
+<div style="position:absolute;left:82px;top:27px;width:18px;height:137px;background:#3A3E43"></div>
+<div style="position:absolute;left:380px;top:27px;width:18px;height:137px;background:#3A3E43"></div>
+<div style="position:absolute;left:41px;top:163px;width:100px;height:12px;border-radius:6px;background:#2A2D31"></div>
+<div style="position:absolute;left:339px;top:163px;width:100px;height:12px;border-radius:6px;background:#2A2D31"></div>
+<div style="position:absolute;left:0;top:0;width:480px;height:18px;border-radius:4px;background:#C89A6B"></div>
+<div style="position:absolute;left:0;top:14px;width:480px;height:4px;border-radius:0 0 4px 4px;background:#AE8052"></div>
+<div style="position:absolute;left:452px;top:18px;width:4px;height:30px;background:#6B7078"></div>
+<div style="position:absolute;left:448px;top:46px;width:20px;height:6px;border-radius:3px;background:#2A2D31"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.chair }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:170px;height:240px">
+<div style="position:absolute;left:55px;top:0;width:60px;height:26px;border-radius:13px;background:#2A2D31"></div>
+<div style="position:absolute;left:80px;top:24px;width:10px;height:14px;background:#3A3E43"></div>
+<div style="position:absolute;left:35px;top:36px;width:100px;height:112px;border-radius:30px 30px 18px 18px;border:5px solid #1E2124;box-sizing:border-box;background:repeating-linear-gradient(0deg,#33373C 0 3px,#2A2D31 3px 5px)"></div>
+<div style="position:absolute;left:55px;top:102px;width:60px;height:12px;border-radius:6px;background:#4A4F55"></div>
+<div style="position:absolute;left:14px;top:116px;width:14px;height:42px;border-radius:7px;background:#1E2124"></div>
+<div style="position:absolute;left:142px;top:116px;width:14px;height:42px;border-radius:7px;background:#1E2124"></div>
+<div style="position:absolute;left:25px;top:146px;width:120px;height:28px;border-radius:14px;background:#1E2124"></div>
+<div style="position:absolute;left:80px;top:174px;width:10px;height:42px;background:#8A8F95"></div>
+<div style="position:absolute;left:30px;top:212px;width:110px;height:9px;border-radius:5px;background:#1E2124"></div>
+<div style="position:absolute;left:24px;top:220px;width:16px;height:16px;border-radius:50%;background:#2A2D31"></div>
+<div style="position:absolute;left:77px;top:220px;width:16px;height:16px;border-radius:50%;background:#2A2D31"></div>
+<div style="position:absolute;left:130px;top:220px;width:16px;height:16px;border-radius:50%;background:#2A2D31"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.mon24 }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:150px;height:118px">
+<div style="position:absolute;left:69px;top:88px;width:12px;height:24px;background:#6B7078"></div>
+<div style="position:absolute;left:47px;top:110px;width:56px;height:8px;border-radius:4px;background:#3A3E43"></div>
+<div style="position:absolute;left:0;top:0;width:150px;height:90px;border-radius:6px;background:#1E2124"></div>
+<div style="position:absolute;left:4px;top:4px;width:142px;height:78px;border-radius:3px;overflow:hidden;background:linear-gradient(180deg,#FFD9AE,#FB9E7C)">
+<div style="position:absolute;left:54px;top:24px;width:34px;height:34px;border-radius:50%;background:#FFF0D6"></div>
+<div style="position:absolute;left:0;top:54px;width:142px;height:24px;background:#2F8F83"></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ is.mon27 }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:176px;height:132px">
+<div style="position:absolute;left:82px;top:100px;width:12px;height:26px;background:#6B7078"></div>
+<div style="position:absolute;left:56px;top:124px;width:64px;height:8px;border-radius:4px;background:#3A3E43"></div>
+<div style="position:absolute;left:0;top:0;width:176px;height:102px;border-radius:6px;background:#1E2124"></div>
+<div style="position:absolute;left:4px;top:4px;width:168px;height:90px;border-radius:3px;overflow:hidden;background:#1B2430">
+<div style="position:absolute;left:0;top:0;width:34px;height:90px;background:#141B24"></div>
+<div style="position:absolute;left:44px;top:12px;width:60px;height:4px;border-radius:2px;background:#7EE2A8"></div>
+<div style="position:absolute;left:52px;top:22px;width:90px;height:4px;border-radius:2px;background:#8AB4F8"></div>
+<div style="position:absolute;left:52px;top:32px;width:54px;height:4px;border-radius:2px;background:#F9B872"></div>
+<div style="position:absolute;left:44px;top:42px;width:30px;height:4px;border-radius:2px;background:#7EE2A8"></div>
+<div style="position:absolute;left:52px;top:52px;width:100px;height:4px;border-radius:2px;background:#56606E"></div>
+<div style="position:absolute;left:52px;top:62px;width:70px;height:4px;border-radius:2px;background:#8AB4F8"></div>
+<div style="position:absolute;left:44px;top:72px;width:40px;height:4px;border-radius:2px;background:#56606E"></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ is.mon34 }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:230px;height:130px">
+<div style="position:absolute;left:109px;top:94px;width:12px;height:30px;background:#6B7078"></div>
+<div style="position:absolute;left:81px;top:122px;width:68px;height:8px;border-radius:4px;background:#3A3E43"></div>
+<div style="position:absolute;left:0;top:0;width:230px;height:96px;border-radius:14px / 8px;background:linear-gradient(90deg,#141619,#24282C 20%,#24282C 80%,#141619)"></div>
+<div style="position:absolute;left:5px;top:5px;width:220px;height:84px;border-radius:10px / 5px;overflow:hidden;background:#101820">
+<div style="position:absolute;left:18px;top:44px;width:6px;height:22px;background:#3FBF7F"></div>
+<div style="position:absolute;left:32px;top:36px;width:6px;height:26px;background:#3FBF7F"></div>
+<div style="position:absolute;left:46px;top:42px;width:6px;height:18px;background:#F26B5B"></div>
+<div style="position:absolute;left:60px;top:28px;width:6px;height:28px;background:#3FBF7F"></div>
+<div style="position:absolute;left:74px;top:22px;width:6px;height:20px;background:#3FBF7F"></div>
+<div style="position:absolute;left:88px;top:30px;width:6px;height:16px;background:#F26B5B"></div>
+<div style="position:absolute;left:102px;top:16px;width:6px;height:26px;background:#3FBF7F"></div>
+<div style="position:absolute;left:130px;top:10px;width:1px;height:66px;background:#2A3642"></div>
+<div style="position:absolute;left:142px;top:14px;width:64px;height:5px;border-radius:2px;background:#3FBF7F"></div>
+<div style="position:absolute;left:142px;top:26px;width:46px;height:5px;border-radius:2px;background:#56606E"></div>
+<div style="position:absolute;left:142px;top:38px;width:58px;height:5px;border-radius:2px;background:#F26B5B"></div>
+<div style="position:absolute;left:142px;top:50px;width:40px;height:5px;border-radius:2px;background:#56606E"></div>
+<div style="position:absolute;left:142px;top:62px;width:52px;height:5px;border-radius:2px;background:#3FBF7F"></div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ is.keyboard }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:120px;height:12px">
+<div style="position:absolute;left:0;top:2px;width:120px;height:10px;border-radius:3px;background:#2E3236"></div>
+<div style="position:absolute;left:5px;top:4px;width:110px;height:5px;background:repeating-linear-gradient(90deg,#5A6066 0 8px,#2E3236 8px 9px)"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.mouse }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:24px;height:13px">
+<div style="position:absolute;left:0;top:0;width:24px;height:13px;border-radius:12px 12px 5px 5px;background:#3A3E43"></div>
+<div style="position:absolute;left:11px;top:2px;width:2px;height:5px;border-radius:1px;background:#8A8F95"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.laptopstand }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:100px;height:86px">
+<div style="position:absolute;left:24px;top:52px;width:6px;height:32px;background:#A8ADB3;transform:rotate(-12deg)"></div>
+<div style="position:absolute;left:70px;top:52px;width:6px;height:32px;background:#A8ADB3;transform:rotate(12deg)"></div>
+<div style="position:absolute;left:12px;top:82px;width:76px;height:4px;border-radius:2px;background:#9399A0"></div>
+<div style="position:absolute;left:14px;top:0;width:72px;height:48px;border-radius:4px;background:#C9CDD2"></div>
+<div style="position:absolute;left:17px;top:3px;width:66px;height:42px;border-radius:2px;background:#24384A"></div>
+<div style="position:absolute;left:23px;top:10px;width:30px;height:3px;border-radius:2px;background:#FFD9AE"></div>
+<div style="position:absolute;left:23px;top:18px;width:44px;height:3px;border-radius:2px;background:#7EE2A8"></div>
+<div style="position:absolute;left:23px;top:26px;width:24px;height:3px;border-radius:2px;background:#8AB4F8"></div>
+<div style="position:absolute;left:6px;top:48px;width:88px;height:6px;border-radius:3px;background:#B8BDC3"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.lamp }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:110px;height:140px">
+<div style="position:absolute;left:10px;top:22px;width:110px;height:118px;background:radial-gradient(ellipse at 55% 0%,rgba(255,221,150,.55),rgba(255,221,150,0) 70%)"></div>
+<div style="position:absolute;left:26px;top:16px;width:5px;height:114px;background:#D5D5D0"></div>
+<div style="position:absolute;left:24px;top:12px;width:82px;height:9px;border-radius:5px;background:#EDEDEA"></div>
+<div style="position:absolute;left:36px;top:20px;width:66px;height:3px;border-radius:2px;background:#FFE3A3"></div>
+<div style="position:absolute;left:0;top:128px;width:58px;height:12px;border-radius:6px;background:#EDEDEA;box-shadow:inset 0 -3px 0 #D5D5D0"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.lightbar }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:120px;height:48px">
+<div style="position:absolute;left:4px;top:8px;width:112px;height:40px;background:linear-gradient(180deg,rgba(255,227,163,.6),rgba(255,227,163,0));clip-path:polygon(18% 0,82% 0,100% 100%,0 100%)"></div>
+<div style="position:absolute;left:0;top:0;width:120px;height:8px;border-radius:4px;background:#2A2D31"></div>
+<div style="position:absolute;left:52px;top:6px;width:16px;height:10px;border-radius:2px;background:#1E2124"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.power }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:110px;height:24px">
+<div style="position:absolute;left:0;top:6px;width:98px;height:16px;border-radius:6px;background:#F4F4F2;box-shadow:inset 0 -3px 0 #D5D5D0"></div>
+<div style="position:absolute;left:12px;top:11px;width:14px;height:5px;border-radius:2px;background:#9AA0A6"></div>
+<div style="position:absolute;left:34px;top:11px;width:14px;height:5px;border-radius:2px;background:#9AA0A6"></div>
+<div style="position:absolute;left:56px;top:11px;width:14px;height:5px;border-radius:2px;background:#9AA0A6"></div>
+<div style="position:absolute;left:78px;top:11px;width:8px;height:4px;border-radius:1px;background:#7EE2A8"></div>
+<div style="position:absolute;left:96px;top:12px;width:14px;height:3px;background:#2A2D31"></div>
+</div>
+</sc-if>
+<sc-if value="{{ is.plant }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;width:110px;height:200px">
+<div style="position:absolute;left:30px;top:20px;width:20px;height:130px;border-radius:50% 50% 10% 10% / 90% 90% 10% 10%;background:#2E7D5B;transform:rotate(-10deg)"></div>
+<div style="position:absolute;left:48px;top:0;width:22px;height:150px;border-radius:50% 50% 10% 10% / 90% 90% 10% 10%;background:#3F9A6E"></div>
+<div style="position:absolute;left:64px;top:30px;width:20px;height:120px;border-radius:50% 50% 10% 10% / 90% 90% 10% 10%;background:#1F6B4A;transform:rotate(12deg)"></div>
+<div style="position:absolute;left:14px;top:60px;width:18px;height:96px;border-radius:50% 50% 10% 10% / 90% 90% 10% 10%;background:#3F9A6E;transform:rotate(-24deg)"></div>
+<div style="position:absolute;left:80px;top:66px;width:17px;height:90px;border-radius:50% 50% 10% 10% / 90% 90% 10% 10%;background:#2E7D5B;transform:rotate(26deg)"></div>
+<div style="position:absolute;left:20px;top:140px;width:70px;height:60px;border-radius:6px 6px 18px 18px;background:#D9774E"></div>
+<div style="position:absolute;left:20px;top:140px;width:70px;height:10px;border-radius:6px 6px 0 0;background:#C4643D"></div>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:480,&quot;height&quot;:240},&quot;item&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;desk_electric&quot;,&quot;desk_dual&quot;,&quot;desk_mech&quot;,&quot;chair&quot;,&quot;mon24&quot;,&quot;mon27&quot;,&quot;mon34&quot;,&quot;keyboard&quot;,&quot;mouse&quot;,&quot;laptopstand&quot;,&quot;lamp&quot;,&quot;lightbar&quot;,&quot;power&quot;,&quot;plant&quot;],&quot;default&quot;:&quot;desk_electric&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const id = this.props.item ?? 'desk_electric';
+    const is = {};
+    ['desk_electric','desk_dual','desk_mech','chair','mon24','mon27','mon34','keyboard','mouse','laptopstand','lamp','lightbar','power','plant'].forEach(k => { is[k] = k === id; });
+    return { is };
+  }
+}
+</script>
+</body>
+</html>
