@@ -1,6 +1,6 @@
-# monis.rent · Build Your Workspace
+# Build Your Workspace
 
-An interactive workspace configurator for [monis.rent](https://monis.rent), a tech-gear rental service for remote workers in Bali. Pick a bundle, swap the desk, add a chair, up to two monitors and accessories, and watch an illustrated room put itself together as you go. Switch between weekly and monthly pricing, then rent the setup through a short checkout.
+An interactive workspace configurator, a tech-gear rental service for remote workers in Bali. Pick a bundle, swap the desk, add a chair, up to two monitors and accessories, and watch an illustrated room put itself together as you go. Switch between weekly and monthly pricing, then rent the setup through a short checkout.
 
 **Live:** https://desk-maker.vercel.app
 
