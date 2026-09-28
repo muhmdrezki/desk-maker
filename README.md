@@ -1,12 +1,12 @@
 # Build Your Workspace
 
-An interactive workspace configurator, a tech-gear rental service for remote workers in Bali. Pick a bundle, swap the desk, add a chair, up to two monitors and accessories, and watch an illustrated room put itself together as you go. Switch between weekly and monthly pricing, then rent the setup through a short checkout.
+An interactive workspace configurator for a tech-gear rental service for remote workers in Bali. Pick a bundle, swap the desk, add a chair, up to two monitors and accessories, and watch an illustrated room put itself together as you go. Switch between weekly and monthly pricing, then rent the setup through a short checkout.
 
 **Live:** https://desk-maker.vercel.app
 
-## The feature monis.rent doesn't have yet
+## The missing feature: a configurator
 
-Right now monis.rent sells gear item by item. A remote worker who lands in Canggu needs a whole desk setup, not a single monitor, and today they have to piece it together from product pages and work out the total themselves. This builder closes that gap:
+Today the rental site sells gear item by item. A remote worker who lands in Canggu needs a whole desk setup, not a single monitor, and they have to piece it together from product pages and work out the total themselves. This builder closes that gap:
 
 - **Start from a preset** (Essentials, Founders, Trading) or an empty room. Each bundle keeps a **20% discount** only while all of its items are still in the setup, and a warning names the item to add back.
 - **See it before you rent it.** A live illustrated scene adds each item as it's chosen, with "+" hotspots suggesting the next piece.
@@ -59,10 +59,10 @@ npm run build      # production build
 npm run lint
 ```
 
-Node 20+ recommended. The original design handoff is in `design-reference/`; open `monis Workspace Builder.dc.html` with `support.js` next to it to view the prototype.
+Node 20+ recommended. The original design handoff is in `design-reference/`; open the Workspace Builder `.dc.html` file with `support.js` next to it to view the prototype.
 
 ## If I had more time
 
-- **Sync catalog and pricing to the live API.** Names, specs, real weekly/monthly SKU prices (replacing the `round(weekly × 3.03)` placeholder), same-day eligibility, stock and bundle definitions should come from monis.rent's catalog, and the cart should submit through their existing checkout.
+- **Sync catalog and pricing to the live API.** Names, specs, real weekly/monthly SKU prices (replacing the `round(weekly × 3.03)` placeholder), same-day eligibility, stock and bundle definitions should come from the live catalog API, and the cart should submit through the existing checkout.
 - **Swap the shape illustrations for commissioned SVG/WebP art.** Each item keeps its box size and anchor point, so the scene's layout and layering rules stay the same.
 - **AI-generated "room preview".** Let the renter upload a photo of their villa or co-living room and get a photo-real render of the chosen setup in their own space, next to the illustrated preview.
